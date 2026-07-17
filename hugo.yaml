@@ -1,0 +1,174 @@
+baseURL: "https://masiouslow.github.io/"
+title: Masiouslow
+languageCode: es-es
+paginate: 5
+# NOTA: si tu Hugo es >= 0.128 verás un aviso de que "paginate" está obsoleto.
+# En ese caso comenta la línea de arriba y descomenta estas dos:
+# pagination:
+#   pagerSize: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Necesario para el buscador (genera el índice JSON que lee Fuse.js)
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Masiouslow
+  description: "Estudiante de sistemas y ciberseguridad. Documento mi homelab, mis proyectos y lo que voy aprendiendo."
+  keywords: [Sistemas, Ciberseguridad, Redes, Homelab, DevOps, Blog, Portfolio]
+  author: Marcos Villalba
+  # author: ["Me", "You"] # multiple authors
+  images: [] # <- vacío hasta que tengas imagen de portada (OpenGraph). Ej: ["/og.png"]
+  DateFormat: "2 de January de 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: ""
+    favicon16x16: ""
+    favicon32x32: ""
+    apple_touch_icon: ""
+    safari_pinned_tab: ""
+
+  # Descomenta cuando tengas un icono real en static/ (si no, sale un icono roto)
+  # label:
+  #   text: "Masiouslow"
+  #   icon: /apple-touch-icon.png
+  #   iconHeight: 35
+
+  # profile-mode  (DESACTIVADO: usas home-info. Lo dejo aquí como referencia)
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: Masiouslow
+    subtitle: "Sistemas, redes y seguridad"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # home-info mode  (ACTIVO: es lo que se ve en tu portada)
+  homeInfoParams:
+    Title: "¡Hola! \U0001F44B"
+    Content: "Estudiante de sistemas y ciberseguridad. Aquí documento mi homelab, mis proyectos y lo que voy aprendiendo sobre redes, seguridad y automatización."
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/Masiouslow"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/m-v-m1/"
+    - name: email
+      url: "mailto:marcosvillalbamontero@gmail.com"
+    # Cuando les des caña, descomenta:
+    # - name: tryhackme
+    #   url: "https://tryhackme.com/p/TU_USUARIO"
+    # - name: hackthebox
+    #   url: "https://app.hackthebox.com/profile/TU_ID"
+    # - name: rss
+    #   url: "index.xml"
+
+  # Comentado: los tags falsos inyectan meta tags inválidas.
+  # Más adelante montaremos analytics self-hosted (Umami/Plausible) en tu Proxmox.
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "XYZabc"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+  #   yandex:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/Masiouslow/Masiouslow.github.io/tree/main/content"
+    Text: "Sugerir cambios" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 30
+    - identifier: search
+      name: Buscar
+      url: /search/
+      weight: 40
+    # Opciones que puedes añadir cuando quieras:
+    # - identifier: categories
+    #   name: Categorías
+    #   url: /categories/
+    #   weight: 50
+    # - identifier: archive
+    #   name: Archivo
+    #   url: /archives/
+    #   weight: 60
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
